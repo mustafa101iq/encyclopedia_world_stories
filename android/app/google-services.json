@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "161366980446",
+    "project_id": "encyclopediaworldstories",
+    "storage_bucket": "encyclopediaworldstories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161366980446:android:93d3902096fe3c6f0501cf",
+        "android_client_info": {
+          "package_name": "com.alhamdany.mustafa.encyclopedia_stories_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161366980446-5ufi7ripiniiqrejp0ogjk560h3g26mv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alhamdany.mustafa.encyclopedia_stories_dashboard",
+            "certificate_hash": "8cd739b3eb78d6caf8231cacf5233561f4250323"
+          }
+        },
+        {
+          "client_id": "161366980446-ue6ui6j4he9d9q31e8mev9spur5cp34n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYg149dnygzbqgK_3D6M8AXQurDfFSW-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161366980446-ue6ui6j4he9d9q31e8mev9spur5cp34n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161366980446:android:d30bb267d13806650501cf",
+        "android_client_info": {
+          "package_name": "com.alhamdany.mustafa.encyclopedia_world_stories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161366980446-mec13f07o0i6fd7dlr4hni6k3tu0apv6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alhamdany.mustafa.encyclopedia_world_stories",
+            "certificate_hash": "8cd739b3eb78d6caf8231cacf5233561f4250323"
+          }
+        },
+        {
+          "client_id": "161366980446-ue6ui6j4he9d9q31e8mev9spur5cp34n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYg149dnygzbqgK_3D6M8AXQurDfFSW-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161366980446-ue6ui6j4he9d9q31e8mev9spur5cp34n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
