@@ -65,7 +65,6 @@ class _StoryDisplayPageState extends State<StoryDisplayPage> {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
 
     return Scaffold(
-      resizeToAvoidBottomPadding: true,
       resizeToAvoidBottomInset: true,
       appBar: header(context, strTitle: story.storyTitle),
       body: Container(

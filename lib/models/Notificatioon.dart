@@ -15,12 +15,12 @@ class Notificatioon {
 
   factory Notificatioon.fromDocument(DocumentSnapshot doc) {
     return Notificatioon(
-        id: doc.data()['id'],
-        title: doc.data()['title'],
-        content: doc.data()['content'],
-        linkUrl: doc.data()['linkUrl'],
-        imgUrl: doc.data()['imgUrl'],
-        timestamp: doc.data()['timestamp'],
+      id: doc['id'],
+      title: doc['title'],
+      content: doc['content'],
+      linkUrl: doc['linkUrl'],
+      imgUrl: doc['imgUrl'],
+      timestamp: doc['timestamp'],
     );
   }
 }

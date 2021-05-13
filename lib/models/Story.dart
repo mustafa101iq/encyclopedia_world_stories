@@ -31,16 +31,16 @@ class Story{
   factory Story.fromDocument(DocumentSnapshot doc) {
     return Story(
       id: doc['id'],
-      publishedBy: doc.data()['publishedBy'],
-      storyType: doc.data()['storyType'],
-      storyTitle: doc.data()['storyTitle'],
-      storyContent: doc.data()['storyContent'],
-      storyImageUrl: doc.data()['storyImageUrl'],
-      isApproved: doc.data()['isApproved'],
-      storyLikesCount: doc.data()['storyLikesCount'],
-      storyCommentsCount: doc.data()['storyCommentsCount'],
-      storyViewedCount: doc.data()['storyViewedCount'],
-      timestamp: doc.data()['timestamp'],
+      publishedBy: doc['publishedBy'],
+      storyType: doc['storyType'],
+      storyTitle: doc['storyTitle'],
+      storyContent: doc['storyContent'],
+      storyImageUrl: doc['storyImageUrl'],
+      isApproved: doc['isApproved'],
+      storyLikesCount: doc['storyLikesCount'],
+      storyCommentsCount: doc['storyCommentsCount'],
+      storyViewedCount: doc['storyViewedCount'],
+      timestamp: doc['timestamp'],
     );
   }
 }

@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   //declare push notification variable
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
   final List<Message> messages = [];
 
   @override
@@ -54,19 +54,40 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     getCurrentUser();
     _firebaseMessaging.subscribeToTopic('notification');
-    _firebaseMessaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        setNotification(message);
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        setNotification(message);
-      },
-      onResume: (Map<String, dynamic> message) async {
-        setNotification(message);
-      },
-    );
-    _firebaseMessaging.requestNotificationPermissions(
-        const IosNotificationSettings(sound: true, badge: true, alert: true));
+
+    // new firebaseMessaging configure
+
+    FirebaseMessaging.instance
+        .getInitialMessage()
+        .then((RemoteMessage message) {
+      if (message != null) {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return NotificationsListPage();
+        }));
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      // print('A new onMessageOpenedApp event was published!');
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return NotificationsListPage();
+      }));
+    });
+
+    // _firebaseMessaging.configure(
+    //   onMessage: (Map<String, dynamic> message) async {
+    //     setNotification(message);
+    //   },
+    //   onLaunch: (Map<String, dynamic> message) async {
+    //     setNotification(message);
+    //   },
+    //   onResume: (Map<String, dynamic> message) async {
+    //     setNotification(message);
+    //   },
+    // );
+
+    // _firebaseMessaging.requestNotificationPermissions(
+    //     const IosNotificationSettings(sound: true, badge: true, alert: true));
 
     getUnReadNotificationCount();
   }
@@ -116,7 +137,6 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      resizeToAvoidBottomPadding: true,
       resizeToAvoidBottomInset: true,
       body: pageOptions[selectedPage],
       drawer: Drawer(

@@ -10,9 +10,9 @@ class Comment {
   factory Comment.fromDocument(DocumentSnapshot doc) {
     return Comment(
       id: doc['id'],
-      commentBy: doc.data()['commentBy'],
-      commentContent: doc.data()['commentContent'],
-      timestamp: doc.data()['timestamp'],
+      commentBy: doc['commentBy'],
+      commentContent: doc['commentContent'],
+      timestamp: doc['timestamp'],
     );
   }
 }

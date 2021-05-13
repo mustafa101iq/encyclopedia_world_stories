@@ -22,14 +22,14 @@ class Usser{
 
   factory Usser.fromDocument(DocumentSnapshot doc) {
     return Usser(
-      id: doc.data()['id'],
-      displayName: doc.data()['displayName'],
-      email: doc.data()['email'],
-      photoUrl: doc.data()['photoUrl'],
-      isUserVerification: doc.data()['isUserVerification'],
-      interactionsNumber: doc.data()['interactionsNumber'],
-      storiesNumber: doc.data()['storiesNumber'],
-      timestamp: doc.data()['timestamp'],
+      id: doc['id'],
+      displayName: doc['displayName'],
+      email: doc['email'],
+      photoUrl: doc['photoUrl'],
+      isUserVerification: doc['isUserVerification'],
+      interactionsNumber: doc['interactionsNumber'],
+      storiesNumber: doc['storiesNumber'],
+      timestamp: doc['timestamp'],
     );
   }
 }

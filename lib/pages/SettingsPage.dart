@@ -141,37 +141,40 @@ class _SettingsPageState extends State<SettingsPage> {
                     showDialog(
                         barrierDismissible: false,
                         context: context,
-                        child: AlertDialog(
-                            actions: [
-                              FlatButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    "موافق",
-                                    style: TextStyle(
-                                        color: Theme.of(context).accentColor,
-                                        fontSize: 18),
-                                  ))
-                            ],
-                            backgroundColor: Color(0xff111111),
-                            title: const Text('اختر لون الخلفية !'),
-                            content: SingleChildScrollView(
-                                child: BlockPicker(
-                              pickerColor: Color(int.parse(
-                                  settingsProvider.storyBGColor,
-                                  radix: 16)),
-                              onColorChanged: (color) {
-                                setState(() {
-                                  String colorString =
-                                      color.toString(); // Color(0x12345678)
-                                  String hexColorString =
-                                      colorString.split('(0x')[1].split(')')[0];
-                                  settingsProvider
-                                      .saveStoryBGColor(hexColorString);
-                                });
-                              },
-                            ))));
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              actions: [
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      "موافق",
+                                      style: TextStyle(
+                                          color: Theme.of(context).accentColor,
+                                          fontSize: 18),
+                                    ))
+                              ],
+                              backgroundColor: Color(0xff111111),
+                              title: const Text('اختر لون الخلفية !'),
+                              content: SingleChildScrollView(
+                                  child: BlockPicker(
+                                pickerColor: Color(int.parse(
+                                    settingsProvider.storyBGColor,
+                                    radix: 16)),
+                                onColorChanged: (color) {
+                                  setState(() {
+                                    String colorString =
+                                        color.toString(); // Color(0x12345678)
+                                    String hexColorString = colorString
+                                        .split('(0x')[1]
+                                        .split(')')[0];
+                                    settingsProvider
+                                        .saveStoryBGColor(hexColorString);
+                                  });
+                                },
+                              )));
+                        });
                   },
                   child: Icon(Icons.color_lens,
                       color: Color(
@@ -228,37 +231,40 @@ class _SettingsPageState extends State<SettingsPage> {
                     showDialog(
                         barrierDismissible: false,
                         context: context,
-                        child: AlertDialog(
-                            actions: [
-                              FlatButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    "موافق",
-                                    style: TextStyle(
-                                        color: Theme.of(context).accentColor,
-                                        fontSize: 18),
-                                  ))
-                            ],
-                            backgroundColor: Color(0xff111111),
-                            title: const Text('اختر لون الخط!'),
-                            content: SingleChildScrollView(
-                                child: BlockPicker(
-                              pickerColor: Color(int.parse(
-                                  settingsProvider.storyFontColor,
-                                  radix: 16)),
-                              onColorChanged: (color) {
-                                setState(() {
-                                  String colorString =
-                                      color.toString(); // Color(0x12345678)
-                                  String hexColorString =
-                                      colorString.split('(0x')[1].split(')')[0];
-                                  settingsProvider
-                                      .saveStoryFontColor(hexColorString);
-                                });
-                              },
-                            ))));
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              actions: [
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      "موافق",
+                                      style: TextStyle(
+                                          color: Theme.of(context).accentColor,
+                                          fontSize: 18),
+                                    ))
+                              ],
+                              backgroundColor: Color(0xff111111),
+                              title: const Text('اختر لون الخط!'),
+                              content: SingleChildScrollView(
+                                  child: BlockPicker(
+                                pickerColor: Color(int.parse(
+                                    settingsProvider.storyFontColor,
+                                    radix: 16)),
+                                onColorChanged: (color) {
+                                  setState(() {
+                                    String colorString =
+                                        color.toString(); // Color(0x12345678)
+                                    String hexColorString = colorString
+                                        .split('(0x')[1]
+                                        .split(')')[0];
+                                    settingsProvider
+                                        .saveStoryFontColor(hexColorString);
+                                  });
+                                },
+                              )));
+                        });
                   },
                   child: Icon(Icons.color_lens,
                       color: Color(int.parse(settingsProvider.storyFontColor,
